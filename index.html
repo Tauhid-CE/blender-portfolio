@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Tauhid Islam | Procedural Blender Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Area -->
+    <header class="portfolio-header fade-in">
+        <div class="header-content">
+            <h1>Md. Tauhid Islam</h1>
+            <p class="professional-title">BSc in Civil Engineering & Procedural Blender Developer</p>
+            <p class="bio-text">Leveraging structural engineering principles as a dedicated hobbyist to develop precise, non-destructive, and highly optimized parametric utilities within Blender.</p>
+        </div>
+    </header>
+
+    <main class="portfolio-container">
+
+        <!-- PROJECT 01: TRUSS GENERATOR -->
+        <section class="project-card fade-in delay-1">
+            <div class="project-info">
+                <span class="project-badge">Blender Geometry Nodes</span>
+                <h2>Plane to Truss Generator</h2>
+                <div class="accent-divider"></div>
+                <p class="project-description">
+                    An advanced structural modifier that instantly converts any input mesh plane into a fully parameterized 3D structural space truss, even if the base face is non-rectangular. It offers absolute control over geometric subdivision, scaling, and profile manipulation while remaining completely non-destructive.
+                </p>
+                
+                <h3 class="section-subheading">Technical Capabilities</h3>
+                <ul class="feature-list">
+                    <li><strong>Arbitrary Mesh Topologies:</strong> Natively handles non-rectangular, organic, or skewed face layouts without breaking structural alignment.</li>
+                    <li><strong>Parametric Profiles:</strong> Dynamically deform profiles across dual orthogonal axes, allowing for clean edge boundaries while implementing custom curves, noise distributions, or mathematical sine waves.</li>
+                    <li><strong>Modular Structural Cladding:</strong> Built-in toggle to selectively include or strip top and bottom roof panelings/claddings.</li>
+                    <li><strong>Material ID Separation:</strong> Independent material slots assigned directly within the modifier stack for framework and cladding components.</li>
+                </ul>
+            </div>
+            
+            <div class="project-media">
+                <div class="media-block">
+                    <h4 class="media-title">Workflow Demonstration</h4>
+                    <div class="video-wrapper">
+                        <video controls preload="metadata" muted>
+                            <source src="Plane_to_Truss_Demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="media-block">
+                    <h4 class="media-title">Structural Variations</h4>
+                    <div class="image-grid-truss">
+                        <figure class="grid-item"><img src="1.png" alt="Curved Truss Roof Profile Generation"></figure>
+                        <figure class="grid-item"><img src="2.png" alt="Double Curvature Dome Truss Variant"></figure>
+                        <figure class="grid-item"><img src="3.png" alt="Inverted Wave Structural Profile"></figure>
+                        <figure class="grid-item"><img src="4.png" alt="Macro view of Structural Nodes and Connectivity"></figure>
+                        <figure class="grid-item"><img src="stdm3.png" alt="Complex Architectural Stadium Framework Internal View"></figure>
+                        <figure class="grid-item"><img src="stdm.png" alt="Stadium Roof Layout Top Down Orthographic View"></figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECT 02: STAIR GENERATOR -->
+        <section class="project-card fade-in delay-2">
+            <div class="project-info">
+                <span class="project-badge">Blender Geometry Nodes</span>
+                <h2>Dynamic Stair Generator</h2>
+                <div class="accent-divider"></div>
+                <p class="project-description">
+                    A highly optimized, production-focused utility designed to generate clean, single-lift straight stairs equipped with structural waist slabs. By excluding heavy and restrictive rail sub-trees, this tool focuses entirely on maximizing layout versatility and spatial adaptability according to the user's explicit design intent.
+                </p>
+                
+                <h3 class="section-subheading">Technical Capabilities</h3>
+                <ul class="feature-list">
+                    <li><strong>3D Spatial Target Handles:</strong> Driven via active start and end control objects. Moving these targets instantly redistributes steps dynamically across any orientation in 3D space.</li>
+                    <li><strong>Automatic Rotational Vectoring:</strong> Steps automatically compute orientation coordinates based on the directional vector between targets, ensuring perfect alignment at any angle or pitch.</li>
+                    <li><strong>Granular Dimension Controls:</strong> Independent parameters to scale the lift width, adjust individual riser/tread distributions, or manually alter overall step density.</li>
+                    <li><strong>Dedicated Structural Shading:</strong> Separate material assignments exposed in the UI for the individual step elements and the primary structural concrete waist slab.</li>
+                </ul>
+            </div>
+            
+            <div class="project-media">
+                <div class="media-block">
+                    <h4 class="media-title">Workflow Demonstration</h4>
+                    <div class="video-wrapper">
+                        <video controls preload="metadata" muted>
+                            <source src="Stair_generator_demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <div class="media-block">
+                    <h4 class="media-title">Production Render</h4>
+                    <div class="single-image-wrapper">
+                        <img src="stair_evee.png" alt="Dynamic Straight Stair Concrete Rendering showcasing structural waist slab and start position controller box">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="portfolio-footer fade-in delay-3">
+        <p>&copy; 2026 Md. Tauhid Islam. All Modifiers Built Natively and Independently.</p>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">&times;</button>
+        <img src="" alt="" id="lightbox-img" class="lightbox-img">
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        document.querySelectorAll('.grid-item img, .single-image-wrapper img').forEach(img => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
+
+</body>
+</html>

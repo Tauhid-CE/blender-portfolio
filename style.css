@@ -1,0 +1,363 @@
+/* ==========================================================================
+   CSS Variables for Global Theming (Light Gray, Gold, Subtle Navy)
+   ========================================================================== */
+   :root {
+    --bg-page: #f4f5f7;        /* Ultra-smooth light gray canvas */
+    --bg-card: #ffffff;        /* Pure white for depth */
+    --bg-media: #f9fafb;       /* Soft contrast for media containers */
+    
+    --text-main: #1f2937;      /* High legibility dark charcoal */
+    --text-muted: #4b5563;     /* Softer body text */
+    --text-light: #9ca3af;     /* UI text and captions */
+    
+    --accent-gold: #c59b27;    /* Premium refined gold */
+    --accent-navy: #1a365d;    /* Deep, sophisticated navy blue */
+    
+    /* Layered, hyper-smooth shadows */
+    --shadow-sm: 0 2px 4px rgba(26, 54, 93, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 10px 30px rgba(26, 54, 93, 0.04), 0 1px 8px rgba(0, 0, 0, 0.02);
+    --shadow-hover: 0 20px 40px rgba(26, 54, 93, 0.08), 0 8px 16px rgba(0, 0, 0, 0.03);
+    
+    /* High-end bezier curve for butter-smooth interactions */
+    --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Global Resets & Typography
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    padding: 0 5vw;
+}
+
+/* ==========================================================================
+   Header Section
+   ========================================================================== */
+.portfolio-header {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0 70px 0;
+}
+
+.header-content {
+    text-align: center;
+    max-width: 800px;
+}
+
+.portfolio-header h1 {
+    font-size: 3.2rem;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.professional-title {
+    color: var(--accent-gold);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.bio-text {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Layout Containers & Cards
+   ========================================================================== */
+.portfolio-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    border-radius: 24px;
+    padding: 60px;
+    margin-bottom: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 60px;
+    align-items: start;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+@media (max-width: 1024px) {
+    .project-card {
+        grid-template-columns: 1fr;
+        padding: 40px;
+        gap: 40px;
+    }
+}
+
+/* ==========================================================================
+   Card Content & Typography
+   ========================================================================== */
+.project-badge {
+    background-color: var(--accent-navy);
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 40px;
+    display: inline-block;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    box-shadow: 0 4px 12px rgba(26, 54, 93, 0.15);
+}
+
+.project-info h2 {
+    font-size: 2.4rem;
+    color: var(--text-main);
+    margin-bottom: 15px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.accent-divider {
+    height: 3px;
+    width: 60px;
+    background-color: var(--accent-gold);
+    margin-bottom: 25px;
+    border-radius: 3px;
+}
+
+.project-description {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.section-subheading {
+    font-size: 1.05rem;
+    color: var(--text-main);
+    margin-bottom: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Custom List Styling */
+.feature-list {
+    list-style-type: none;
+}
+
+.feature-list li {
+    margin-bottom: 18px;
+    color: var(--text-muted);
+    position: relative;
+    padding-left: 32px;
+    font-size: 1rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.feature-list li strong {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.feature-list li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--accent-gold);
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   Media Blocks (Video & Images)
+   ========================================================================== */
+.project-media {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.media-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.media-title {
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+}
+
+/* Wrappers */
+.video-wrapper, .single-image-wrapper {
+    background-color: var(--bg-media);
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+video {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    background-color: #000;
+    outline: none;
+    border: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Image Grid */
+.image-grid-truss {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.grid-item {
+    background-color: var(--bg-media);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: var(--transition-smooth);
+}
+
+.grid-item:hover {
+    transform: scale(1.04);
+    box-shadow: 0 12px 24px rgba(26, 54, 93, 0.08);
+    z-index: 10;
+}
+
+.media-caption {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    padding: 18px;
+    text-align: center;
+    background-color: var(--bg-media);
+    border-top: 1px solid rgba(26, 54, 93, 0.05);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.portfolio-footer {
+    text-align: center;
+    padding: 0 0 60px 0;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Entrance Animations (The "Pro" Touch)
+   ========================================================================== */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+/* ==========================================================================
+   Lightbox
+   ========================================================================== */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    backdrop-filter: blur(6px);
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 92vw;
+    max-height: 88vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 0.3s cubic-bezier(0.25, 1, 0.3, 1) forwards;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 28px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+    z-index: 1001;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
